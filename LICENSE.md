@@ -9,7 +9,6 @@ The Genji-Ball-Team shared files and config do **not** currently have an open-so
 
 ## What you should ask about first
 
-- Copying significant parts into a project outside Genji Ball.
 - Copying significant parts of the code into another project.
 
 If you want to do either of those, ask on the [Discord](https://discord.gg/sv9VVjh5pT).
