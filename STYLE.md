@@ -16,9 +16,9 @@ When a rule and the surrounding code disagree, follow the rule in new code and f
 
 No monoliths.
 
-- A file warns at **400 lines** and fails at **600**, not counting blank lines and comments. Test files get double (800 / 1200).
-- Enforced in `npm run check`: ESLint `max-lines` for TS/JS, the shared size script for Rust and OverPy.
-- Files already over the limit are on the repo's known-exceptions list, each with an issue to split it. The list only shrinks; nothing new goes on it.
+- A file warns at **400 lines** and fails at **600**, not counting blank lines and comments. Test files get double (800 / 1200), and so does a Rust file's `#[cfg(test)]` part.
+- Enforced in `npm run check`: ESLint `max-lines` for TS/JS, the shared size script (`gb-size`) for Rust and OverPy.
+- Files already over the limit are on the repo's known-exceptions list, `.size-exceptions`, each with an issue to split it. The list only shrinks; nothing new goes on it, and the check fails when a listed file is back under the limit.
 
 ## Naming
 

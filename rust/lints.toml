@@ -1,0 +1,7 @@
+# The clippy levels from STYLE.md (Functions, Errors). Paste into Cargo.toml. Long functions and
+# complexity warn; unwrap and expect outside tests fail, except at startup with an #[allow] and a reason.
+[lints.clippy]
+too_many_lines = "warn"
+cognitive_complexity = "warn"
+unwrap_used = "deny"
+expect_used = "deny"

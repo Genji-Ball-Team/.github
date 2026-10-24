@@ -1,0 +1,75 @@
+{
+  "name": "@genji-ball-team/style",
+  "version": "1.0.0",
+  "description": "The Genji Ball coding style: ESLint and Prettier config, the file-size check and the pre-commit hook",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "type": "module",
+  "exports": {
+    "./eslint": "./eslint.js",
+    "./prettier": "./prettier.js"
+  },
+  "bin": {
+    "gb-size": "bin/gb-size.js",
+    "gb-hooks": "bin/gb-hooks.js"
+  },
+  "files": [
+    "eslint.js",
+    "prettier.js",
+    "lib/",
+    "bin/",
+    "rust/",
+    "STYLE.md"
+  ],
+  "scripts": {
+    "prepare": "node bin/gb-hooks.js install",
+    "format": "prettier --write .",
+    "typecheck": "tsc",
+    "lint": "prettier --check . && eslint . && node bin/gb-size.js",
+    "test": "node --test",
+    "check": "npm run typecheck && npm run lint && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Genji-Ball-Team/.github.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Genji-Ball-Team/.github/issues"
+  },
+  "homepage": "https://github.com/Genji-Ball-Team/.github#readme",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "prettier": "./prettier.js",
+  "peerDependencies": {
+    "eslint": "^10.0.0",
+    "prettier": "^3.0.0",
+    "typescript": ">=5.0.0 <6.1.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "prettier": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import-x": "^4.17.1",
+    "typescript-eslint": "^8.72.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3"
+  }
+}
