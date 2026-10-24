@@ -1,0 +1,6 @@
+# The thresholds from STYLE.md (Functions). Copy next to Cargo.toml; the lint levels go in Cargo.toml
+# (see lints.toml).
+too-many-lines-threshold = 60
+cognitive-complexity-threshold = 15
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
