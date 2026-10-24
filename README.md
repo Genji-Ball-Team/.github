@@ -35,6 +35,7 @@ export default styleConfig({ root: import.meta.dirname, ignores: ["dist/"] });
 - **`gb-size`** checks the tracked Rust and OverPy files against the size limit (ESLint `max-lines` covers TS and JS). In Rust, a file's `#[cfg(test)]` part counts against the test limit.
 - **`.size-exceptions`** at the repo root lists the files already over the limit, one path per line, each with its split issue in a `#` comment. Both ESLint and `gb-size` read it, and `gb-size` fails when a listed file is gone or under the limit, so the list only shrinks.
 - **`gb-hooks install`** writes the pre-commit hook (it leaves an existing hook of someone else's alone, and does nothing in CI). The hook runs Prettier, ESLint and `gb-size` on the staged files, each only if the repo has it. `git commit --no-verify` skips it once.
+- **Line endings:** add a `.gitattributes` with `* text=auto eol=lf`. Prettier wants LF, and without it a Windows checkout (CRLF) fails `prettier --check`.
 - **Rust:** copy [`rust/clippy.toml`](rust/clippy.toml) next to `Cargo.toml`, and paste [`rust/lints.toml`](rust/lints.toml) into it.
 - **OverPy (CE):** only `gb-size` and the hook; leave out ESLint, Prettier and TypeScript.
 
